@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= shoe.name %> Details</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1><%= shoe.name %></h1>
+    <div class="shoe-card">
+        <% if (shoe.image) { %>
+            <img src="<%= shoe.image %>" alt="<%= shoe.name %>">
+        <% } else { %>
+            <img src="/default-image.jpg" alt="No Image Available">
+        <% } %>
+        <p><strong>Brand:</strong> <%= shoe.brand %></p>
+        <p><strong>Price:</strong> $<%= shoe.price %></p>
+        <p><strong>Description:</strong> <%= shoe.description %></p>
+    </div>
+    
+    <a href="/" class="btn btn-primary">Back to Shoes</a>
+    
+</body>
+</html>

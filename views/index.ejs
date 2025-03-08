@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FootFlex - Shoe Collection</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>FootFlex - Shoe Collection</h1>
+    <a href="/shoes/new" class="btn btn-primary">Add New Shoe</a>
+
+    <div class="shoe-grid">
+        <% shoes.forEach(shoe => { %>
+            <a href="/edit/<%= shoe._id %>" class="shoe-card">
+                <img src="<%= shoe.image %>" alt="<%= shoe.name %>">
+                <h3><%= shoe.name %></h3>
+                <p>Brand: <%= shoe.brand %></p>
+                <p>Price: $<%= shoe.price %></p>
+            </a>
+        <% }) %>
+    </div>
+</body>
+</html>

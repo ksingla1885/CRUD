@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Edit Shoe</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <h1>Edit Shoe</h1>
+
+    <form action="/edit/<%= shoe._id %>" method="POST" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%= shoe.name %>" required>
+
+        <label for="brand">Brand</label>
+        <input type="text" name="brand" id="brand" value="<%= shoe.brand %>" required>
+
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price" value="<%= shoe.price %>" required>
+
+        <label for="description">Description</label>
+        <textarea name="description" id="description" rows="3" required><%= shoe.description %></textarea>
+
+        <label for="image">Upload New Image (optional)</label>
+        <input type="file" name="image" id="image">
+
+        <button type="submit">Update Shoe</button>
+    </form>
+
+    <form action="/shoes/delete" method="POST">
+        <input type="hidden" name="id" value="<%= shoe._id %>">
+        <button type="submit" class="btn-danger">Delete Shoe</button>
+    </form>
+
+    <a href="/" class="btn btn-edit">Back to Home</a>
+</body>
+</html>
